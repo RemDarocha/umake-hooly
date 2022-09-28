@@ -1,0 +1,11 @@
+<form [formGroup]="form" (ngSubmit)="createFoodTruck()" class="text-center">
+  <div class="form">
+    <mat-form-field appearance="fill">
+      <mat-label>Nom du foodtruck</mat-label>
+      <input matInput id="name" formControlName="name" />
+    </mat-form-field>
+    <div class="addButton">
+      <button class="btn btn-primary" type="submit">Ajouter</button>
+    </div>
+  </div>
+</form>

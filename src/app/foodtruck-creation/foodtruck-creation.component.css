@@ -1,0 +1,17 @@
+.form {
+    display: flex;
+    justify-content: space-around;
+}
+
+.addButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media(max-width:991px){
+    .form {
+        display: flex;
+        flex-direction: column;
+    }
+}

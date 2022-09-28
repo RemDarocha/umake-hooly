@@ -1,0 +1,35 @@
+<form [formGroup]="form" (ngSubmit)="createBooking()">
+  <div class="form">
+    <mat-form-field appearance="fill">
+      <mat-label>Date de réservation</mat-label>
+      <input
+        id="date"
+        matInput
+        formControlName="dateInput"
+        [matDatepicker]="picker"
+      />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Sélection du foodtruck</mat-label>
+      <mat-select
+        formControlName="selectFoodtruck"
+        (selectionChange)="updatedSelectedValue($event.value)"
+      >
+        <option value="" selected></option>
+        <mat-option
+          *ngFor="let foodTruck of foodTruckList"
+          [value]="foodTruck.id"
+        >
+          {{ foodTruck.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="addButton">
+      <button class="btn btn-primary" type="submit">Ajouter</button>
+    </div>
+  </div>
+</form>
